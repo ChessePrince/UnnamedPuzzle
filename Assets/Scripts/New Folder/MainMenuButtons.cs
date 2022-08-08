@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class MainMenuButtons : MonoBehaviour
 {
     private AudioSource _audioSource;
-    [SerializeField] private AudioClip _clicClip;
     [SerializeField] private GameObject goMain, goCredits, goOptions;
+
+    [SerializeField] private AudioClip _buttonClick;
+    [SerializeField] private AudioClip _buttonHover;
 
     private void Awake()
     {
@@ -26,33 +28,39 @@ public class MainMenuButtons : MonoBehaviour
     public void ChangeScene(int index)
     {
         SceneManager.LoadScene(index);
-        PlayClic();
     }
     public void Credits()
     {
         goMain.SetActive(false);
+
         goCredits.SetActive(true);
-        PlayClic();
+        goOptions.SetActive(true);
     }
     public void Options()
     {
         goMain.SetActive(false);
-        goOptions.SetActive(false);
-        PlayClic();
+
+        goCredits.SetActive(false);
+        goOptions.SetActive(true);
     }
-    public void Back()
+    public void BackToMain()
     {
         goMain.SetActive(true);
+
         goCredits.SetActive(false);
-        PlayClic();
+        goOptions.SetActive(false);
     }
     public void QuitGame()
     {
         Application.Quit();
         Debug.Log("Quit");
     }
-    public void PlayClic()
+    public void PlayClick()
     {
-        _audioSource.PlayOneShot(_clicClip, 0.2f);
+        SoundManager.Instance.PlaySound(_buttonClick);
+    }
+    public void PlayHover()
+    {
+        SoundManager.Instance.PlaySound(_buttonHover);
     }
 }
