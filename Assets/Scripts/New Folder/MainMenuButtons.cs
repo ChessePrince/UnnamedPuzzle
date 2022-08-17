@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuButtons : MonoBehaviour
 {
     private AudioSource _audioSource;
-    [SerializeField] private GameObject goMain, goCredits, goOptions;
+    [SerializeField] private GameObject goMain, goCredits, goOptions, goPlayer, goBackground;
 
     [SerializeField] private AudioClip _buttonClick;
     [SerializeField] private AudioClip _buttonHover;
@@ -16,6 +16,7 @@ public class MainMenuButtons : MonoBehaviour
         goMain.SetActive(true);
         goCredits.SetActive(false);
         goOptions.SetActive(false);
+
         _audioSource = GetComponent<AudioSource>();
 
         /*
@@ -29,12 +30,21 @@ public class MainMenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+    public void PlayGame()
+    {
+        goMain.SetActive(false);
+        goCredits.SetActive(false);
+        goOptions.SetActive(false);
+
+        goBackground.SetActive(false);
+        goPlayer.SetActive(true);
+    }
     public void Credits()
     {
         goMain.SetActive(false);
 
         goCredits.SetActive(true);
-        goOptions.SetActive(true);
+        goOptions.SetActive(false);
     }
     public void Options()
     {
