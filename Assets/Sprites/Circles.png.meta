@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1782e7e9852167245b8bba7f9ca23e11
+guid: dc74f7d3c6cc7294b84215e2a8259bff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,91 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SquareBorder Tiles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd2022f3ffb45604a9f3e848517b4f19
-      internalID: 1725453329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SquareBorder Tiles_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e0155fa4b88fca499359337510a4d3b
-      internalID: 8239513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SquareBorder Tiles_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 492df02f935206147882e80a313279e2
-      internalID: 604522026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SquareBorder Tiles_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 015552613a35e064c9e8daa55d040d3e
-      internalID: -1211996858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SquareBorder Tiles_4
+      name: circles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -220,77 +136,35 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45b6f4dacaeb89f429586e106c1d487f
-      internalID: -326688665
+      spriteID: 958c62b77fc521a4c97d322356578a60
+      internalID: 2024515771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SquareBorder Tiles_5
+      name: circles_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
-        width: 16
-        height: 16
+        y: 8
+        width: 8
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd18872b9a8dae445a1ddc862d7838b7
-      internalID: 1685942590
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SquareBorder Tiles_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d18233454c8562a40b616a8a0357a7a9
-      internalID: -2033258843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SquareBorder Tiles_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe100810968714943ad6e362ac5a82a4
-      internalID: 1299588135
+      spriteID: 12086ed4ffbe59f49a002c5cd6e3840d
+      internalID: -1425988662
       vertices: []
       indices: 
       edges: []
@@ -306,17 +180,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SquareBorder Tiles_0: 1725453329
-      SquareBorder Tiles_6: -2033258843
-      SquareBorder Tiles_2: 604522026
-      SquareBorder Tiles_7: 1299588135
-      SquareBorder Tiles_4: -326688665
-      SquareBorder Tiles_1: 8239513
-      SquareBorder Tiles_5: 1685942590
-      SquareBorder Tiles_3: -1211996858
+      circles_0: 2024515771
+      circles_1: -1425988662
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
