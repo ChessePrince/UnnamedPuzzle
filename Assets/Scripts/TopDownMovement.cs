@@ -10,45 +10,44 @@ public class TopDownMovement : MonoBehaviour
     public SpriteRenderer sprRndDude;
     public SpriteRenderer sprRndGun;
     //Movement
-    public float movementSpeed;
-    private Vector2 inputVector;
+    private const float MOVE_SPEED = 12f;
+    private Rigidbody2D compRB;
+    private Vector2 movement;
 
-    private Vector2 mousePos;
-    private Vector2 mouseWorldPos;
+    private void Awake()
+    {
+        compRB = GetComponent<Rigidbody2D>();
+    }
     void Update()
     {
-        Movement();
-        RotateGun();
-
-        FlipSprites();
-        //Shoot();
-    }
-
-    void Movement()
-    {
-        inputVector.x = Input.GetAxis("Horizontal");
-        inputVector.y = Input.GetAxis("Vertical");
-
-        if (inputVector != Vector2.zero)
+        if (!PauseControl.gameIsPaused)
         {
-            transform.position += (Vector3)inputVector.normalized * movementSpeed * Time.deltaTime;
+            MovementInput();
+            Rotate();
+
+            FlipSprites();
+            //Shoot();
         }
     }
-    void RotateGun()
+    private void FixedUpdate()
     {
-        mousePos = Input.mousePosition;
-
-        Vector3 objectPos = Camera.main.WorldToScreenPoint(trnsGun.position);
-        mousePos.x = mousePos.x - objectPos.x;
-        mousePos.y = mousePos.y - objectPos.y;
-
-        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        trnsGun.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        compRB.velocity = movement * MOVE_SPEED;
     }
+    void MovementInput()
+    {
+        float mx = Input.GetAxisRaw("Horizontal");
+        float my = Input.GetAxisRaw("Vertical");
 
+        movement = new Vector2(mx, my).normalized;
+    }
+    void Rotate()
+    {
+        var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(trnsGun.position);
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        trnsGun.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
     void Shoot()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
             //GameObject insantiatedMelon = Instantiate(melon, trnsGunTip.position, Quaternion.identity);
@@ -57,9 +56,9 @@ public class TopDownMovement : MonoBehaviour
     }
     void FlipSprites()
     {
-        mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var dir = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (mouseWorldPos.x > transform.position.x)
+        if (dir.x > transform.position.x)
         {
             sprRndDude.flipX = false;
             sprRndGun.flipY = false;

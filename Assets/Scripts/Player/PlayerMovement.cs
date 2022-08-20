@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D compRB;
     private Vector2 movement;
 
-
     private void Awake()
     {
         compRB = GetComponent<Rigidbody2D>();
