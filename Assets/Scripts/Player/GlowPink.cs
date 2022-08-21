@@ -7,7 +7,7 @@ public class GlowPink : MonoBehaviour
     private Rigidbody2D compRB;
     public float vel;
     //ParticleTrail compParticleTrail;
-    public GameObject prefabExplosion;
+    //public GameObject prefabExplosion;
 
     private void Awake()
     {
@@ -17,10 +17,11 @@ public class GlowPink : MonoBehaviour
     void Start()
     {
         //Move(1);
+        Destroy(gameObject, 5f);
+        Move(1);
     }
     private void Update()
     {
-        Move(1);
         //compParticleTrail.StartTheTrail();
     }
     void Move(int dir)
@@ -33,12 +34,12 @@ public class GlowPink : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DestroyGlow();
+        //DestroyGlow();
     }
     void DestroyGlow()
     {
-        GameObject effect = Instantiate(prefabExplosion, transform.position, Quaternion.identity);
-        Destroy(effect, 2f);
+        //GameObject effect = Instantiate(prefabExplosion, transform.position, Quaternion.identity);
+        //Destroy(effect, 2f);
         Destroy(gameObject);
     }
 }

@@ -26,7 +26,7 @@ public class TopDownMovement : MonoBehaviour
             Rotate();
 
             FlipSprites();
-            //Shoot();
+            Shoot();
         }
     }
     private void FixedUpdate()
@@ -52,6 +52,7 @@ public class TopDownMovement : MonoBehaviour
         {
             //GameObject insantiatedMelon = Instantiate(melon, trnsGunTip.position, Quaternion.identity);
             //insantiatedMelon.GetComponent<FakeHeightObject>().Initialize(trnsGun.right * Random.Range(groundDispenseVelocity.x, groundDispenseVelocity.y), Random.Range(verticalDispenseVelocity.x, verticalDispenseVelocity.y));
+            
         }
     }
     void FlipSprites()
